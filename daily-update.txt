@@ -1,0 +1,7 @@
+The given chart displays the percentaes of men and women's physical activities of different age groups in Australia. The percentage of both men and women have shown great differences./n
+
+In early stages the men have dominated women in physical activity. As the age of men increased their physical activitie's dropped linearly, displaying a drop of 10% from 15 to 45. After the age of 45 it has linearly increased by 1% every 10 years. It has been very low, mainly in their working age (25-64) in contrase to female’s./n
+
+Women's physical activity is quite contrast to men's as their was a linear increase from 15 to 44 and has remaind almost constant till the age of 64. Women's physical activity has alwas been more than 50% in their working ages(35 - 64). /n
+
+Overall the physical activity of female has always been higher than male, mainly after they started working. The male population was physically active only in their younger age (15-24)./n
