@@ -1,10 +1,26 @@
 import "./App.css";
 import HomePage from "./pages/homepage/Homepage";
+import { Switch, Route } from "react-router-dom";
+import TextToBraile from "./pages/text-braille/TextToBraile";
+import BrailleKeyboard from "./pages/braille-keyboard/BrailleKeyboard";
+
+const HatsPage = () => (
+  <div>
+    <h1>HATS PAGE</h1>
+  </div>
+);
 
 function App() {
   return (
     <div>
-      <HomePage/>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/braile-keyboard" component={BrailleKeyboard} />
+        <Route exact path="/text-braile" component={TextToBraile} />
+        <Route path="/learn-more" component={HatsPage} />
+        <Route path="/braile-converter" component={HatsPage} />
+        <Route path="/sign-language-converter" component={HatsPage} />
+      </Switch>
     </div>
   );
 }
