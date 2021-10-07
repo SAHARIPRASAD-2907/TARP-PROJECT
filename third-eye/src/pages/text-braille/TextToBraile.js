@@ -35,6 +35,7 @@ class TextToBraile extends React.Component {
             placeholder="Enter text here..."
             onChange={this.handleChange}
           />
+          <br />
           {imageDisplay.length > 0 ? (
             <BrailleImage letter={imageDisplay}/>
           ) : (
