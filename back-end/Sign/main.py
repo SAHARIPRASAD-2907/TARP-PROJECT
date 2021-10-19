@@ -30,8 +30,8 @@ def main():
 @app.route('/upload', methods=['POST'])
 @cross_origin()
 def upload_voice():
-    os.chdir("/Users/MYPRO/Desktop/TARP-PROJECT/back-end/Sign")
-    path = "/Users/MYPRO/Desktop/TARP-PROJECT/back-end/Sign"
+    os.chdir("C:/Users/sahar/OneDrive/Desktop/TARP-PROJECT/back-end/Sign")
+    path = "C:/Users/sahar/OneDrive/Desktop/TARP-PROJECT/back-end/Sign"
     mean_height = 0
     mean_width = 0
     num_of_images = len(os.listdir('.'))
@@ -60,11 +60,11 @@ def upload_voice():
     for i in text:
         for j in i:
             filename = (
-                "/Users/MYPRO/Desktop/TARP-PROJECT/back-end/Sign/image/{}.jpg".format(j))
+                "C:/Users/sahar/OneDrive/Desktop/TARP-PROJECT/back-end/Sign/image/{}.jpg".format(j))
             img = cv2.imread(filename)
             img_array.append(img)
         filename = (
-            "/Users/MYPRO/Desktop/TARP-PROJECT/back-end/Sign/image/space.jpg")
+            "C:/Users/sahar/OneDrive/Desktop/TARP-PROJECT/back-end/Sign/image/space.jpg")
         img = cv2.imread(filename)
         img_array.append(img)
         height, width, layers = img.shape
@@ -82,4 +82,4 @@ def upload_voice():
 
 
 if __name__ == '__main__':
-    app.run(host="192.168.0.105", port=3301, debug=True)
+    app.run(port=5001, debug=True)
