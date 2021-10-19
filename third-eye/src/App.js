@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import TextToBraile from "./pages/text-braille/TextToBraile";
 import BrailleKeyboard from "./pages/braille-keyboard/BrailleKeyboard";
 import BrailleToText from "./pages/braille-text/BrailleTOtext";
+import SignLanguage from "./pages/sign-language-converter/SignLanguage";
 
 const HatsPage = () => (
   <div>
@@ -20,7 +21,7 @@ function App() {
         <Route exact path="/text-braile" component={TextToBraile} />
         <Route path="/learn-more" component={HatsPage} />
         <Route path="/braile-converter" component={BrailleToText} />
-        <Route path="/sign-language-converter" component={HatsPage} />
+        <Route path="/sign-language-converter" component={SignLanguage} />
       </Switch>
     </div>
   );

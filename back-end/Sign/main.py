@@ -13,10 +13,8 @@ from PIL import Image
 
 app = Flask(__name__)
 cors = CORS(app)
-app.config['CORS_HEADERS'] = 'mp4'
-app.config['UPLOAD_FOLDER'] = './image/'
-myintvariable = 1
-os.environ['DEBUSSY'] = str(myintvariable)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
@@ -27,7 +25,7 @@ def main():
     return jsonify('Speech to Sign Language')
 
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload2', methods=['POST'])
 @cross_origin()
 def upload_voice():
     os.chdir("C:/Users/sahar/OneDrive/Desktop/TARP-PROJECT/back-end/Sign")
@@ -74,10 +72,6 @@ def upload_voice():
         video.write(image)
     cv2.destroyAllWindows()
     video.release()
-    # env_var = os.environ
-    # print("User's Environment variable:")
-    # pprint.pprint(dict(env_var), width=1)
-    pwd = os.environ.get('PWD')
     return jsonify("File sent sucessfully")
 
 
