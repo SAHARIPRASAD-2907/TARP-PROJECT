@@ -50,7 +50,7 @@ class BrailleKeyboard extends React.Component {
           const alpha = l !== " " ? l.toLowerCase() : "space";
           return (
             <img
-              src={require("../../datasets/images/" + alpha + ".png").default}
+              src={require("../../datasets/images/a.png").default}
               className="image"
               alt={alpha}
               onClick={() => {

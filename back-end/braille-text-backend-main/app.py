@@ -38,12 +38,14 @@ def upload_image():
         return jsonify("No file upload")
     file = request.files['file']
     if file and allowed_file(file.filename):
-        path = './uploads'
-        os.mkdir(path)
+        path = "./uploads"
+        # os.mkdir(path)
         filename = secure_filename(file.filename)
         UPLOAD_FOLDER = path
         file.save(os.path.join(UPLOAD_FOLDER, filename))
-        url = './'+path+'/'+filename
+        url = "."+path+'/'+filename;
+        print(url)
+        print("------------------------------------------")
         image, ctrs, paper, gray, edged, thresh = gi.get_image(
             url, iter=0, width=1500)
         diam = gd.get_diameter(ctrs)
