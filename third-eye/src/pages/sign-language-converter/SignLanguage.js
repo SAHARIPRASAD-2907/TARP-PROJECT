@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
-import "node_modules/video-react/dist/video-react.css";
-import { Player } from 'video-react';
+import ReactPlayer from "react-player"
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import axios from "axios";
 const FileDownload = require('js-file-download');
+
 
 
 const SignLanguage = () => {
@@ -45,6 +45,7 @@ const SignLanguage = () => {
 
   return (
     <div>
+        <h1>Text to sign Language</h1>
       <button onClick={()=>{
           SpeechRecognition.startListening();
       }}>Start</button>
@@ -61,11 +62,11 @@ const SignLanguage = () => {
       <p>{transcript}</p>
       <button onClick={generateVideo}>genrate</button>
       <br/>
-      <Player
-      playsInline
-      poster="test.mp4"
-      src="test.mp4"
-    />
+      <ReactPlayer 
+        url = "https://youtu.be/xHs4qyyDSqs"
+        controls = {true}
+      />
+      
 
       
     </div>
