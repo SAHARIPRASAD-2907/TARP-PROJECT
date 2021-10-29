@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import './Braille-to-text.scss';
 
 class BrailleToText extends Component {
   constructor() {
@@ -34,21 +35,23 @@ class BrailleToText extends Component {
   render() {
     const { answer } = this.state;
     return (
-      <div>
-        <h1>Image to braille</h1>
-        <form>
-          <div>
-            <label>Select File</label>
-            <input
-              type="file"
-              name="file"
-              onChange={(e) => this.handleFile(e)}
-            />
-          </div>
-          <br />
-          <button onClick={(e) => this.handleUpload(e)}>Upload</button>
-          <h1>{answer}</h1>
-        </form>
+      <div className = 'container mt-4'>
+        <div className="display-4 text-center mb-4">
+          <h1>Image to braille</h1>
+          <form>
+            <div>
+              <label>Select File</label>
+              <input
+                type="file"
+                name="file"
+                onChange={(e) => this.handleFile(e)}
+              />
+            </div>
+            <br />
+            <button onClick={(e) => this.handleUpload(e)}>Upload</button>
+            <h1>{answer}</h1>
+          </form>
+        </div>
       </div>
     );
   }
