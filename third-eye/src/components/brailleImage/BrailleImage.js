@@ -3,12 +3,12 @@ import './braille-image.scss';
 
 export const BrailleImage = (props) =>{
     return(
-        <div>
+        <div>   
             {props.letter.map((l)=>{
                 const alpha = l!==" "?l.toLowerCase():"space";
                 return(
                     <img 
-                        src={require("../../datasets/images/"+alpha+'.png').default}
+                        src={require("../../../public/assets/images/"+alpha+".png").default}
                         className="image"
                         alt={l}
                     />

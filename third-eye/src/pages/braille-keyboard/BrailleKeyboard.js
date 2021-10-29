@@ -48,9 +48,11 @@ class BrailleKeyboard extends React.Component {
         <h1>Braile keyboard</h1>
         {alphabet.map((l) => {
           const alpha = l !== " " ? l.toLowerCase() : "space";
+          console.log("../../assets/images/"+alpha+".png");
           return (
             <img
-              src={require("../../datasets/images/a.png").default}
+              key={alpha}
+              src={require("../../../public/assets/images/"+alpha+".png").default}
               className="image"
               alt={alpha}
               onClick={() => {
