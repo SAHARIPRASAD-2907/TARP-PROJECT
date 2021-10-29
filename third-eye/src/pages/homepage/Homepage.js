@@ -1,9 +1,9 @@
 import React from "react";
 import Directory from "../../components/directory/Directory";
 import "./home-page.scss";
-const HomePage = ({history}) => (
+const HomePage = ({ history }) => (
   <div className="homepage">
-    <Directory history={history}/>
+    <Directory history={history} />
   </div>
 );
 

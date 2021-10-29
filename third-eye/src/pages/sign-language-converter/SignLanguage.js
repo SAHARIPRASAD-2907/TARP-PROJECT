@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import "./sign-language-converter.scss";
 import ReactPlayer from "react-player";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import axios from "axios";
 const FileDownload = require("js-file-download");
-import "sign-language-converter.scss";
 
 const SignLanguage = () => {
   const { transcript, resetTranscript } = useSpeechRecognition();

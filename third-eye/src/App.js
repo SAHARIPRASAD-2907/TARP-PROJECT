@@ -5,16 +5,18 @@ import TextToBraile from "./pages/text-braille/TextToBraile";
 import BrailleKeyboard from "./pages/braille-keyboard/BrailleKeyboard";
 import BrailleToText from "./pages/braille-text/BrailleTOtext";
 import SignLanguage from "./pages/sign-language-converter/SignLanguage";
+import Header from "./components/Header/Header";
 
 const HatsPage = () => (
   <div>
-    <h1>HATS PAGE</h1>
+    <h1>Learn More Page</h1>
   </div>
 );
 
 function App() {
   return (
     <div>
+      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/braile-keyboard" component={BrailleKeyboard} />
