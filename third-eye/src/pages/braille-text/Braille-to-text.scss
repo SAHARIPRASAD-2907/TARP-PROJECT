@@ -107,3 +107,18 @@
 		}	
 	}
 }
+
+.resulttext{
+	margin: 8%;
+	padding: 20px;
+	span{
+		font-family: 'Times New Roman', Times, serif;
+		font-size: 26px;
+		color: red;
+		font-weight: bold;
+		
+		.text{
+			color: blue;
+		}
+	}
+}

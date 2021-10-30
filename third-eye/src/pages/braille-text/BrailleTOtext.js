@@ -54,7 +54,9 @@ class BrailleToText extends Component {
           <div className="form-group">
             <button className="button" onClick={(e) => this.handleUpload(e)}>Upload</button>
           </div>
-          <h1>{answer}</h1>
+          <div className = "resulttext">
+            <span>The Braille Text is: <span className = "text"> {answer}</span> </span>
+          </div>
         </form>  
       </div>
     );
