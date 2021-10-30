@@ -34,7 +34,7 @@ class BrailleToText extends Component {
     const { answer } = this.state;
     return (
       <div className="container">
-        <p className="headers">Image to braille</p>
+        <p className="headers">Braille Image to Text</p>
         <form>
         <div class="form-group">
           <div class="input-group">
