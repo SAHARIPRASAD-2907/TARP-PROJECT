@@ -65,7 +65,7 @@ const SignLanguage = () => {
       <p>{transcript}</p>
       <button onClick={generateVideo}>genrate</button>
       <br />
-      {status.data ? <ReactPlayer url={require("./test.webm").default} controls={true} /> : "Sorry File still not generated" }
+      {status.data ? <ReactPlayer url={require("./test.webm").default} controls={true} /> : "Click on Start to generate" }
       
     </div>
   );
