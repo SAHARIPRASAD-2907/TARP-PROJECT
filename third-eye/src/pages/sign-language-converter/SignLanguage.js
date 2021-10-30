@@ -68,8 +68,7 @@ const SignLanguage = () => {
       <p>{transcript}</p>
       <button onClick={generateVideo} className = "btnsign">Generate</button>
       <br />
-      {status.data ? <ReactPlayer url={require("./test.webm").default} controls={true} /> : "" }
-      
+      {status.data ? <ReactPlayer url={require("./test.webm").default} controls={true} /> : "Click on Start to generate" }
     </div>
   );
 };
