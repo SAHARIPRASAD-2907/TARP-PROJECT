@@ -16,7 +16,6 @@ const SignLanguage = () => {
   }
 
   const generateVideo = () => {
-    setStatus({data2:true})
     console.log("string:" + state);
     const fd = new FormData();
     fd.append("speech", transcript);
@@ -34,6 +33,7 @@ const SignLanguage = () => {
         }
       );
     }
+    setStatus({data2:true})
   };
 
   return (
@@ -68,11 +68,14 @@ const SignLanguage = () => {
       />
       <p>{transcript}</p>
       <button onClick={generateVideo} className = "btnsign">Generate</button>
-      <div className = {status.data2 ? "space":""}>
+      {
+        !status.data2?  <div className = "space">
         <div className = "videogenerated">
           {status.data ? <ReactPlayer className = "video" url={require("./test.webm").default} controls={true} /> : "" }
         </div>
-      </div>
+      </div> :""
+      }
+
   
       
     </div>
