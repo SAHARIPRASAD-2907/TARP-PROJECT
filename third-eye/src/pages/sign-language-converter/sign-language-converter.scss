@@ -47,3 +47,22 @@
     cursor: pointer;
   }
 
+  .space{
+      padding: 70px;
+
+      .videogenerated{
+        box-shadow: 0 0 20px rgba(0,0,0, 0.75);
+        border-color: #fff;
+        overflow: hidden;
+        padding: 30px;
+        margin-left: 25%;
+        width: 650px;
+        /*
+        margin: auto;
+        box-shadow: 80px 80px 80px rgba(6, 6, 7, 0.2);
+        border-radius: 25px;
+        border-color: red;
+        border-style: solid;
+        overflow: hidden;*/
+    }
+  }
