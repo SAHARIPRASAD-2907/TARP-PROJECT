@@ -44,12 +44,16 @@ class BrailleKeyboard extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h1>Braile keyboard</h1>
+      <div className="container">
+        <p className = "headers">Braille Keyboard</p>
+        <p className = "paratext">
+            Select Braille characters to Translate
+        </p>
         {alphabet.map((l) => {
           const alpha = l !== " " ? l.toLowerCase() : "space";
           console.log("../../assets/images/"+alpha+".png");
           return (
+          <div className="images">
             <img
               key={alpha}
               src={require("../../../public/assets/images/"+alpha+".png").default}
@@ -63,9 +67,12 @@ class BrailleKeyboard extends React.Component {
                 });
               }}
             />
+            </div>
           );
         })}
-        <textarea onChange={this.handleChange} value={this.state.displayText} />
+        <div className="textarea">
+          <textarea onChange={this.handleChange} value={this.state.displayText} />
+        </div>
       </div>
     );
   }

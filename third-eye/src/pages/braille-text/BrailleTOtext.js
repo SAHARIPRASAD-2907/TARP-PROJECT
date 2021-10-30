@@ -33,27 +33,29 @@ class BrailleToText extends Component {
   render() {
     const { answer } = this.state;
     return (
-      <div>
-        <h1>Image to braille</h1>
+      <div className="container">
+        <p className="headers">Image to braille</p>
         <form>
-          <div className="form-group file-area">
-            <label>Select File</label>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" readOnly = {true} />
+              <span class="fileUpload btn btn-success">
+              <span class="upl" id="upload">Select File</span>
             <input
               type="file"
               name="file"
               onChange={(e) => this.handleFile(e)}
+              className = "upload up"
             />
-            <div class="file-dummy">
-              <div className="success">
-                Great, your files are selected. Keep on.
-              </div>
-              <div className="default">Please select some files</div>
+            </span>
             </div>
           </div>
           <br />
-          <button onClick={(e) => this.handleUpload(e)}>Upload</button>
+          <div className="form-group">
+            <button className="button" onClick={(e) => this.handleUpload(e)}>Upload</button>
+          </div>
           <h1>{answer}</h1>
-        </form>
+        </form>  
       </div>
     );
   }

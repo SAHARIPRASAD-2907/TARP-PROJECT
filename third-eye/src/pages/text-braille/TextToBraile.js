@@ -1,5 +1,7 @@
 import React from "react";
 import { BrailleImage } from "../../components/brailleImage/BrailleImage";
+import "./textToBraille.scss";
+
 class TextToBraile extends React.Component {
   constructor() {
     super();
@@ -18,29 +20,31 @@ class TextToBraile extends React.Component {
   render() {
     const { imageDisplay } = this.state;
     return (
-      <div>
-        <div>
-          <h2>Generate your own Braille</h2>
-        </div>
-        <div>
-          <p>
+      <div className="container"> 
+        <p className = "headers">Generate your own Braille</p>
+        <p className = "paratext">
             Enter text below for it to be translated into braille. Spaces will
             be translated as blank spaces, however, other characters that are
             not English letters cannot be displayed.
-          </p>
+        </p>
+        <div className="textbox-align">
+          <div className="input">
+            <input
+              type="text"
+              placeholder="Enter text here"
+              onChange={this.handleChange}
+            />
+            <span class="input__border"></span>
+          </div>
         </div>
-        <div>
-          <input
-            type="text"
-            placeholder="Enter text here..."
-            onChange={this.handleChange}
-          />
-          <br />
-          {imageDisplay.length > 0 ? (
-            <BrailleImage letter={imageDisplay}/>
-          ) : (
-            " "
-          )}
+        <div className="display-padding">
+          <div className="braille-display">
+            {imageDisplay.length > 0 ? (
+              <BrailleImage letter={imageDisplay}/>
+            ) : (
+              " "
+            )}
+          </div>
         </div>
       </div>
     );
