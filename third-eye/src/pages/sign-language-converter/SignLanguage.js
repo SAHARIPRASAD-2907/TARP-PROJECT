@@ -9,13 +9,14 @@ import axios from "axios";
 const SignLanguage = () => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const [state, setState] = useState("");
-  const [status, setStatus] = useState({data:false});
+  const [status, setStatus] = useState({data:false,data2:false});
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null;
   }
 
   const generateVideo = () => {
+    setStatus({data2:true})
     console.log("string:" + state);
     const fd = new FormData();
     fd.append("speech", transcript);
@@ -59,7 +60,7 @@ const SignLanguage = () => {
         onClick={() => {
           resetTranscript();
           setState("");
-          setStatus({data:false})
+          setStatus({data:false,data2:false})
         }}
         className = "reset"
         alt = "Reset"
@@ -67,11 +68,12 @@ const SignLanguage = () => {
       />
       <p>{transcript}</p>
       <button onClick={generateVideo} className = "btnsign">Generate</button>
-      <div className = "space">
+      <div className = {status.data2 ? "space":""}>
         <div className = "videogenerated">
           {status.data ? <ReactPlayer className = "video" url={require("./test.webm").default} controls={true} /> : "" }
         </div>
       </div>
+  
       
     </div>
   );
