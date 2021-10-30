@@ -5,12 +5,11 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import axios from "axios";
-const FileDownload = require("js-file-download");
 
 const SignLanguage = () => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const [state, setState] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState({data:false});
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null;
@@ -24,20 +23,15 @@ const SignLanguage = () => {
       axios.post("http://127.0.0.1:5001/upload2", fd).then(
         (res) => {
           if (res.data) {
-            setStatus(res.data);
+            setStatus({data:true});
             console.log("Received Data-" + status);
+
           }
         },
         (err) => {
           console.log(err);
         }
       );
-    }
-    if (status) {
-      axios.get("http://127.0.0.1:3002/receive").then((res) => {
-        console.log("data received sucessfully");
-        FileDownload(res.data, "test.mp4");
-      });
     }
   };
 
@@ -63,6 +57,7 @@ const SignLanguage = () => {
         onClick={() => {
           resetTranscript();
           setState("");
+          setStatus({data:false})
         }}
       >
         Reset
@@ -70,7 +65,8 @@ const SignLanguage = () => {
       <p>{transcript}</p>
       <button onClick={generateVideo}>genrate</button>
       <br />
-      <ReactPlayer url="https://youtu.be/xHs4qyyDSqs" controls={true} />
+      {status.data ? <ReactPlayer url={require("./test.webm").default} controls={true} /> : "Sorry File still not generated" }
+      
     </div>
   );
 };
