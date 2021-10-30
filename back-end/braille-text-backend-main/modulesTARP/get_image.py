@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 def get_image(url, iter=2, width=None):
-    image = cv2.imread(url)
+    image = cv2.imread("../uploads/Screenshot_2021-10-29_at_3.06.53_PM.png")
     if width:
         image = imutils.resize(image, width)
     ans = image.copy()

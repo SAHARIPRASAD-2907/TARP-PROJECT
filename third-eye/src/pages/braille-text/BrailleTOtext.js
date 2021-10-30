@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import './Braille-to-text.scss';
+import "./Braille-to-text.scss";
 
 class BrailleToText extends Component {
   constructor() {
@@ -21,37 +21,41 @@ class BrailleToText extends Component {
     console.log(this.state.file, "STATE ---- $$$$");
     const fd = new FormData();
     fd.append("file", this.state.file, this.state.file.name);
-    axios
-      .post("http://127.0.0.1:5000/upload", fd, {})
-      .then(
-        (res) => {
-          this.setState({ answer: res.data });
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
+    axios.post("http://127.0.0.1:5000/upload", fd, {}).then(
+      (res) => {
+        this.setState({ answer: res.data });
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
   render() {
     const { answer } = this.state;
     return (
-      <div className = 'container mt-4'>
-        <div className="display-4 text-center mb-4">
-          <h1>Image to braille</h1>
-          <form>
-            <div>
-              <label>Select File</label>
-              <input
-                type="file"
-                name="file"
-                onChange={(e) => this.handleFile(e)}
-              />
+      <div className="container">
+        <p className="headers">Image to braille</p>
+        <form>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" readOnly = {true} />
+              <span class="fileUpload btn btn-success">
+              <span class="upl" id="upload">Select File</span>
+            <input
+              type="file"
+              name="file"
+              onChange={(e) => this.handleFile(e)}
+              className = "upload up"
+            />
+            </span>
             </div>
-            <br />
-            <button onClick={(e) => this.handleUpload(e)}>Upload</button>
-            <h1>{answer}</h1>
-          </form>
-        </div>
+          </div>
+          <br />
+          <div className="form-group">
+            <button className="button" onClick={(e) => this.handleUpload(e)}>Upload</button>
+          </div>
+          <h1>{answer}</h1>
+        </form>  
       </div>
     );
   }
