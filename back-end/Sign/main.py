@@ -67,7 +67,7 @@ def upload_voice():
         img_array.append(img)
         height, width, layers = img.shape
     video = cv2.VideoWriter(
-        "test.mp4", cv2.VideoWriter_fourcc(*'MJPG'), 1, (width, height))
+        "test.webm", cv2.VideoWriter_fourcc(*'vp80'), 1, (width, height))
     for image in img_array:
         video.write(image)
     cv2.destroyAllWindows()
