@@ -757,6 +757,10 @@ original model. This slows down the process due to the large overhead added.
 
 ### Block Diagram:
 
+![overall_diag2](https://user-images.githubusercontent.com/50985871/139610906-c07908a5-1d06-488e-aa8f-b848cc34d4ec.PNG)
+
+
+
 We are creating sign language converter and braille converter system for our project. In sign 
 language converter, the user will record the speech using microphone. With the help of speech 
 recognition system, we will convert the audio to text form. If the detected text matches the, 
@@ -772,6 +776,8 @@ images in the database and print the corresponding text.
 
 ### Data Flow Diagram – 
 
+![sign_lang_conversion](https://user-images.githubusercontent.com/50985871/139611022-73c1443a-2402-4a2d-b669-f9bbbf012021.PNG)
+
 In sign language converter, the user will record the speech using microphone. With the help of 
 speech recognition system, we will convert the audio to text form. The speech recognition system 
 will first pre-process the audio to enhance its quality. After pre-processing, the features are 
@@ -783,6 +789,8 @@ available phrases, the system will display the sign language letter by letter.
 ## Braille System:
 
 ### Data Flow Diagram –  
+
+![braille_sys](https://user-images.githubusercontent.com/50985871/139611098-3442a376-012a-4c69-aa9f-d0fdc1b211f7.PNG)
 
 The user can either convert braille code to text, in which the user should input a braille code. The 
 system will perform image enhancement and image filtering techniques to separate the braille 
@@ -814,6 +822,9 @@ The language used for communication with deaf people is sign language. This is l
 
 ### Architecture Diagram:
 
+![archdiag_sign_lang_converter](https://user-images.githubusercontent.com/50985871/139611151-32d84cf9-fc01-4c71-90c2-67cd17456e36.PNG)
+
+
 ## 2. Braille Converter:
 
 Our system will be responsible for many features like changing Text into braille format, Braille into text format and providing them with a simple keyboard made not of alphabets but with braille alphabet images.
@@ -832,6 +843,9 @@ This is implemented using React-JS.
 3.3. Loop from step 2 till the complete text is parsed.
 
 ### Architecture Diagram:
+
+![archdiag_braille_converter](https://user-images.githubusercontent.com/50985871/139611187-7f39f39c-2589-4c1d-9969-0593211aa0c8.PNG)
+
 
 ## 2.2. Braille image – Text Converter:
 
@@ -862,6 +876,11 @@ This application is developed using python and libraries such as OpenCV, skimage
 
 #### Architecture Diagram:
 
+![archdiag_textconverter](https://user-images.githubusercontent.com/50985871/139611279-f50f688d-6c5d-4279-a898-97cc6f2c49aa.PNG)
+
+
+
+
 ## 2.3. Braille Keyboard:
 
 This is implemented using React-JS. When the application is launched, a braille code keyboard will be displayed to the user. The keyboard is set of braille code images which is displayed to the user from the database. When the user presses any braille code image, the event is captured using onclick event and the corresponding text for that braille code will be displayed. This is a dynamic application in which we can enter the modify the text inside the textbox and also convert the braille code to text and any click in the keyboard is captured through the onclick event.
@@ -874,6 +893,8 @@ This is implemented using React-JS. When the application is launched, a braille 
 3.1. Loop from step 2.
 
 ### Architecture Diagram:
+
+![archdiag_braille_keyboard](https://user-images.githubusercontent.com/50985871/139611314-4af5c5e6-bd5c-418c-a772-8ec86bebe69d.PNG)
 
 ## Innovation / Novelty:
 
@@ -894,36 +915,6 @@ OpenCV image processing techniques is more accurate in comparison to neural netw
 model as this reads the features in comparison to conversion of image to particular format 
 for neural network model for better understanding
 
-## Features
-
-- Sign Language Converter
-- Braille Converter
-    - Brailler code to text converter
-    - Text to Braille Code converter
-- Braille Keyboard
-
-
-## Tech
-
-This application uses a number of open source projects to work :
-
-- reactJS - HTML enhanced for web apps!
-- node.js - evented I/O for the backend
-- Express - fast node.js network app framework 
-- Flask Api - To quickly build REST APIs
-
-## Installation and Getting Started 
-
-This app requires [Node.js](https://nodejs.org/) and ReactJs to run.
-
-Install the dependencies, devDependencies, the required node modules and to start the server.
-
-```sh
-npm install
-npm start
-```
-
-## License
 
 
 
