@@ -29,7 +29,7 @@ function Header() {
         <Link className="option" to="/learn-more">
           <span className="navhead"> Learn More </span>
         </Link>
-        <Link className="option" to="/learn-more">
+        <Link className="option" to="/signin">
           <span className="navhead"> Sign In </span>
         </Link>
       </div>

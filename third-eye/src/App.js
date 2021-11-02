@@ -6,6 +6,7 @@ import BrailleKeyboard from "./pages/braille-keyboard/BrailleKeyboard";
 import BrailleToText from "./pages/braille-text/BrailleTOtext";
 import SignLanguage from "./pages/sign-language-converter/SignLanguage";
 import Header from "./components/Header/Header";
+import signInAndSignUppage from "./pages/signin/Signin";
 
 const HatsPage = () => (
   <div>
@@ -22,6 +23,7 @@ function App() {
         <Route path="/braile-keyboard" component={BrailleKeyboard} />
         <Route exact path="/text-braile" component={TextToBraile} />
         <Route path="/learn-more" component={HatsPage} />
+        <Route path="/signin" component={signInAndSignUppage} />
         <Route path="/braile-converter" component={BrailleToText} />
         <Route path="/sign-language-converter" component={SignLanguage} />
       </Switch>
