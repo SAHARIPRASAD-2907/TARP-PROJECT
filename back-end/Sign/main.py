@@ -28,8 +28,8 @@ def main():
 @app.route('/upload2', methods=['POST'])
 @cross_origin()
 def upload_voice():
-    os.chdir("/Users/sahariprasad/Desktop/CODING/TARP-PROJECT/back-end/Sign")
-    path = "/Users/sahariprasad/Desktop/CODING/TARP-PROJECT/back-end/Sign"
+    os.chdir("/Users/sahariprasad/Desktop/CODING/SEMISTER-6/TARP-PROJECT/back-end/Sign")
+    path = "/Users/sahariprasad/Desktop/CODING/SEMISTER-6/TARP-PROJECT/back-end/Sign"
     mean_height = 0
     mean_width = 0
     num_of_images = len(os.listdir('.'))
@@ -58,15 +58,15 @@ def upload_voice():
     for i in text:
         for j in i:
             filename = (
-                "/Users/sahariprasad/Desktop/CODING/TARP-PROJECT/back-end/Sign/image/{}.jpg".format(j))
+                "/Users/sahariprasad/Desktop/CODING/SEMISTER-6/TARP-PROJECT/back-end/Sign/image/{}.jpg".format(j))
             img = cv2.imread(filename)
             img_array.append(img)
         filename = (
-            "/Users/sahariprasad/Desktop/CODING/TARP-PROJECT/back-end/Sign/image/space.jpg")
+            "/Users/sahariprasad/Desktop/CODING/SEMISTER-6/TARP-PROJECT/back-end/Sign/image/space.jpg")
         img = cv2.imread(filename)
         img_array.append(img)
         height, width, layers = img.shape
-    os.chdir("/Users/sahariprasad/Desktop/CODING/TARP-PROJECT/third-eye/src/pages/sign-language-converter")
+    os.chdir("/Users/sahariprasad/Desktop/CODING/SEMISTER-6/TARP-PROJECT/third-eye/src/pages/sign-language-converter")
     video = cv2.VideoWriter("test.webm", cv2.VideoWriter_fourcc(*'vp80'), 1, (width, height))
     for image in img_array:
         video.write(image)
