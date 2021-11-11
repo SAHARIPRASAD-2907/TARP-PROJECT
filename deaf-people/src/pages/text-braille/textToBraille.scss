@@ -1,0 +1,53 @@
+.container{
+    text-align: center;
+}
+.paratext{
+    font-family: 'Times New Roman', Times, serif;    
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.textbox-align{
+    padding-left: 30%;
+    padding-top: 25px;
+}
+.input {
+    padding: 0.6rem 1.7rem;
+    padding-bottom: 0.8rem;
+    background: rgb(245, 245, 245);
+    border-radius: 5px;
+    width: 500px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 1px 1px #c1c2c3;
+}
+  
+.input input {
+    background: none;
+    border: none;
+    font-family: "Segoe UI", sans-serif;
+    outline: none;
+    font-size: 0.9em;
+    box-sizing: border-box;
+    width: 100%;
+}
+  
+.input .input__border {
+    width: 130%;
+    height: 3px;
+    position: absolute;
+    left: -10%;
+    top: 95%;
+    background: rgb(100, 0, 0);
+    transition: background 100ms;
+}
+  
+.input input:focus ~ .input__border {
+    background: red;
+}
+
+.braille-display{
+    padding-top:50px;
+    padding-right: 120px;
+    padding-left: 120px;
+}
+
