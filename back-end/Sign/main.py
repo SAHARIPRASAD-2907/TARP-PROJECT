@@ -28,7 +28,8 @@ def main():
 @app.route('/upload2', methods=['POST'])
 @cross_origin()
 def upload_voice():
-    os.chdir("/Users/sahariprasad/Desktop/CODING/SEMISTER-6/TARP-PROJECT/back-end/Sign")
+    os.chdir(
+        "/Users/sahariprasad/Desktop/CODING/SEMISTER-6/TARP-PROJECT/back-end/Sign")
     path = "/Users/sahariprasad/Desktop/CODING/SEMISTER-6/TARP-PROJECT/back-end/Sign"
     mean_height = 0
     mean_width = 0
@@ -66,8 +67,9 @@ def upload_voice():
         img = cv2.imread(filename)
         img_array.append(img)
         height, width, layers = img.shape
-    os.chdir("/Users/sahariprasad/Desktop/CODING/SEMISTER-6/TARP-PROJECT/third-eye/src/pages/sign-language-converter")
-    video = cv2.VideoWriter("test.webm", cv2.VideoWriter_fourcc(*'vp80'), 1, (width, height))
+    os.chdir("/Users/sahariprasad/Desktop/CODING/SEMISTER-6/TARP-PROJECT/deaf-people/src/pages/sign-language-converter")
+    video = cv2.VideoWriter(
+        "test.webm", cv2.VideoWriter_fourcc(*'vp80'), 1, (width, height))
     for image in img_array:
         video.write(image)
     cv2.destroyAllWindows()
