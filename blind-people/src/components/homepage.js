@@ -8,12 +8,12 @@ const HomePage = () => (
           <span className="subtitle">TRY NOW</span>
         </div>
       </div>
-      <div className="menu-item">
+      {/*<div className="menu-item">
         <div className="content">
           <h1 className="title">A PAGE FOR DEAF PEOPLE</h1>
           <span className="subtitle">TRY NOW</span>
         </div>
-      </div>
+</div>*/}
       <div className="menu-item">
         <div className="content">
           <h1 className="title">BRAILE KEYBOARD</h1>
