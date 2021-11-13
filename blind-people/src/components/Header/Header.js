@@ -10,7 +10,7 @@ function Header() {
           alt="logo"
           className="logo"
           src="https://t4.ftcdn.net/jpg/02/28/34/87/360_F_228348761_mUepq4xFEZ6ecodMvDrgt5935G5JcgUE.jpg"
-          title= "Home"
+          title="Home"
         />
       </Link>
       <div className="options">
@@ -22,9 +22,6 @@ function Header() {
         </Link>
         <Link className="option" to="/braile-converter">
           <span className="navhead"> Braille to Text </span>
-        </Link>
-        <Link className="option" to="/sign-language-converter">
-          <span className="navhead"> Sign Language Converter </span>
         </Link>
         <Link className="option" to="/learn-more">
           <span className="navhead"> Learn More </span>
