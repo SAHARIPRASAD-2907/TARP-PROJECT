@@ -260,6 +260,7 @@ def get_letters(showID=False):
                 i += 1
 
     for l in range(len(letters)):
+        # letters[l].remove(0)
         if l % 3 == 0:
             print()
         print(letters[l])
@@ -315,7 +316,7 @@ def translate(letters):
     return ans
 
 
-url = "Users/sahariprasad/Desktop/Screenshot 2021-11-29 at 5.51.44 PM.png"
+url = "/Users/sahariprasad/Desktop/BRAILLE-TEXT/X.png"
 
 image, ctrs, paper, gray, edged, thresh = get_image(url, iter=0, width=1500)
 
