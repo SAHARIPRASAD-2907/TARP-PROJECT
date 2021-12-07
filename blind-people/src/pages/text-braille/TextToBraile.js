@@ -1,6 +1,7 @@
 import React from "react";
 import { BrailleImage } from "../../components/brailleImage/BrailleImage";
 import "./textToBraille.scss";
+const { checkIfNumber } = require("./numbers");
 
 class TextToBraile extends React.Component {
   constructor() {
@@ -11,10 +12,23 @@ class TextToBraile extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
+  formatStringArray(x) {
+    let y = [];
+    x.forEach((a) => {
+      if (checkIfNumber(a)) {
+        y.push("#");
+      }
+      y.push(a);
+    });
+    console.log(y);
+    return y;
+  }
   handleChange(e) {
+    const imgDisplay = e.target.value.split("");
+    const formatArray = this.formatStringArray(imgDisplay);
     this.setState({
       textField: e.target.value,
-      imageDisplay: e.target.value.split(""),
+      imageDisplay: formatArray,
     });
   }
   render() {
